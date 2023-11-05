@@ -16,7 +16,7 @@ set(SOURCE
     src/LinuxPlatformMisc.cpp
 )
 
-add_library(Diligent-LinuxPlatform ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
+add_library(Diligent-LinuxPlatform STATIC ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
 set_common_target_properties(Diligent-LinuxPlatform)
 
 target_include_directories(Diligent-LinuxPlatform

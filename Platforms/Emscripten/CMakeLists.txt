@@ -17,7 +17,7 @@ set(SOURCE
     ../Linux/src/LinuxFileSystem.cpp
 )
 
-add_library(Diligent-EmscriptenPlatform ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
+add_library(Diligent-EmscriptenPlatform STATIC ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
 set_common_target_properties(Diligent-EmscriptenPlatform)
 
 target_include_directories(Diligent-EmscriptenPlatform

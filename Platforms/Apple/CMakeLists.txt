@@ -30,7 +30,7 @@ if(PLATFORM_MACOS)
 	list(APPEND SOURCE src/MacOSNativeWindow.mm)
 endif()
 
-add_library(Diligent-ApplePlatform ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
+add_library(Diligent-ApplePlatform STATIC ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
 set_common_target_properties(Diligent-ApplePlatform)
 
 target_include_directories(Diligent-ApplePlatform
