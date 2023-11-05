@@ -16,7 +16,7 @@ set(SOURCE
     src/Win32PlatformMisc.cpp
 )
 
-add_library(Diligent-Win32Platform ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
+add_library(Diligent-Win32Platform STATIC ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
 set_common_target_properties(Diligent-Win32Platform)
 
 target_include_directories(Diligent-Win32Platform

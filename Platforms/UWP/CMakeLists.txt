@@ -14,7 +14,7 @@ set(SOURCE
     src/UWPFileSystem.cpp
 )
 
-add_library(Diligent-UniversalWindowsPlatform ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
+add_library(Diligent-UniversalWindowsPlatform STATIC ${SOURCE} ${INTERFACE} ${PLATFORM_INTERFACE_HEADERS})
 set_common_target_properties(Diligent-UniversalWindowsPlatform)
 
 target_include_directories(Diligent-UniversalWindowsPlatform

@@ -400,7 +400,8 @@ if(MSVC)
     set(DEFAULT_DILIGENT_MSVC_RELEASE_COMPILE_OPTIONS /GL)
     if("${TARGET_CPU}" STREQUAL "x86_64")
         # Enable AVX2
-        set(DEFAULT_DILIGENT_MSVC_RELEASE_COMPILE_OPTIONS ${DEFAULT_DILIGENT_MSVC_RELEASE_COMPILE_OPTIONS} /arch:AVX2)
+        # rbfx: Don't do any extra options. This should be controlled by Urho3D CMake scripts.
+        # set(DEFAULT_DILIGENT_MSVC_RELEASE_COMPILE_OPTIONS ${DEFAULT_DILIGENT_MSVC_RELEASE_COMPILE_OPTIONS} /arch:AVX2)
     endif()
     set(DILIGENT_MSVC_RELEASE_COMPILE_OPTIONS ${DEFAULT_DILIGENT_MSVC_RELEASE_COMPILE_OPTIONS} CACHE STRING "Additional MSVC compile options for release configurations")
     if (DILIGENT_MSVC_RELEASE_COMPILE_OPTIONS)
@@ -614,7 +615,7 @@ add_subdirectory(Primitives)
 add_subdirectory(Platforms)
 add_subdirectory(Common)
 add_subdirectory(Graphics)
-add_subdirectory(Tests)
+#add_subdirectory(Tests)
 
 
 # Installation instructions
