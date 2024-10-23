@@ -185,12 +185,16 @@ RenderDeviceGLImpl::RenderDeviceGLImpl(IReferenceCounters*       pRefCounters,
     glGetIntegerv(GL_NUM_EXTENSIONS, &NumExtensions);
     CHECK_GL_ERROR("Failed to get the number of extensions");
     m_ExtensionStrings.reserve(NumExtensions);
+    std::string tmp;
     for (int Ext = 0; Ext < NumExtensions; ++Ext)
     {
         auto CurrExtension = glGetStringi(GL_EXTENSIONS, Ext);
         CHECK_GL_ERROR("Failed to get extension string #", Ext);
         m_ExtensionStrings.emplace(reinterpret_cast<const Char*>(CurrExtension));
+        tmp += reinterpret_cast<const Char*>(CurrExtension);
+        tmp += " ";
     }
+    LOG_INFO_MESSAGE(tmp);
 
 #if GL_KHR_debug
     if (EngineCI.EnableValidation && glDebugMessageCallback != nullptr)
